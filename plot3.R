@@ -31,10 +31,10 @@ p <- ggplot(data=MD, aes(x=year, y=log(Emissions)))
 
 p <- p + facet_grid(. ~ type) + guides(fill=F) 
 p <- p + geom_boxplot(aes(fill=type)) + stat_boxplot(geom ='errorbar') 
-p <- p + ylab(expression(paste('Log', ' of PM'[2.5], ' Emissions'))) 
-p <- p + xlab('Year') 
+p <- p + labs(x = 'year', y = expression(paste('Log', ' of PM'[2.5], ' Emissions')))
 p <- p + ggtitle('Emissions per Type in Baltimore City, Maryland') 
 p <- p + geom_jitter(alpha=0.10)
+p <- p + theme(text = element_text(size = 08))
 
 # Save output as .png
 ggsave(filename = 'plot3.png', scale = 1)

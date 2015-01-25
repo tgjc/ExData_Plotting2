@@ -23,7 +23,7 @@ MD <- subset(NEI, fips=='24510')
 # from 1999 to 2008? Use the base plotting system to make a plot answering this question.
 
 # Generate the graph in the same directory as the source code
-png(filename='~/Exploratory_Data_Analysis/Assignment_2/plot2.png')
+png(filename = 'plot2.png')
 
 barplot(tapply(X=MD$Emissions, INDEX=MD$year, FUN=sum), 
         main='Total Emission in Baltimore City, MD', 
