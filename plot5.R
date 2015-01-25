@@ -28,7 +28,7 @@ colnames(MD.df) <- c('year', 'Emissions')
 
 # Construct initial plot then add layers
 p <- ggplot(data=MD.df, aes(x=year, y=Emissions)) 
-p <- p + geom_bar(aes(fill=year)) + guides(fill=F) 
+p <- p + geom_bar(aes(stat=identity)) + guides(fill=F) 
 p <- p + ggtitle('Total Emissions of Motor Vehicle Sources in Baltimore City, Maryland')
 p <- p + ylab(expression('PM'[2.5])) + xlab('Year') + theme(legend.position='none') 
 p <- p + geom_text(aes(label=round(Emissions,0), size=1, hjust=0.5, vjust=2))
