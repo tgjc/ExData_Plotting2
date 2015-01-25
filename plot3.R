@@ -1,6 +1,6 @@
 # load required packages
-library(package = RMySQL)
-library(package = ggplot2)
+packages <- c("RMySQL", "ggplot2")
+sapply(packages, require, character.only = TRUE, quietly = TRUE)
 
 # Set working directory
 setwd("~/Dropbox/Coursera/ExData_Plotting2/")
@@ -38,3 +38,4 @@ p <- p + theme(text = element_text(size = 08))
 
 # Save output as .png
 ggsave(filename = 'plot3.png', scale = 1)
+dev.off()

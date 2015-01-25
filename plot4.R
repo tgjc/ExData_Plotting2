@@ -1,6 +1,6 @@
 # load required packages
-library(package = RMySQL)
-library(package = ggplot2)
+packages <- c("RMySQL", "ggplot2")
+sapply(packages, require, character.only = TRUE, quietly = TRUE)
 
 # Set working directory
 setwd("~/Dropbox/Coursera/ExData_Plotting2/")
@@ -34,5 +34,6 @@ p <- p + ylab(expression(paste('PM', ''[2.5], ' in kilotons')))
 p <- p + geom_text(aes(label=round(Emissions/1000,digits=2), size=2, hjust=1.5, vjust=1.5)) 
 p <- p + theme(legend.position='none') + scale_colour_gradient(low='black', high='red')
 
-# Save output as .png
+# Save output as .png and turn off graphics device
 ggsave(filename = 'plot4.png', scale = 1)
+dev.off()
