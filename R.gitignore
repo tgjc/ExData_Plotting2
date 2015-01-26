@@ -13,4 +13,4 @@ vignettes/*.html
 vignettes/*.pdf
 
 # Data folder
-/data
+/data**
